@@ -3,6 +3,7 @@ import 'package:calculator_app/theme_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import 'package:calculator_app/navigation_bar.dart';
 
 class CalculatorScreen extends StatefulWidget {
   const CalculatorScreen({super.key});
@@ -32,31 +33,8 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        leading:
-            IconButton(onPressed: () {}, icon: const Icon(Icons.more_vert)),
-        actions: [
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 12),
-            child: Consumer<ThemeProvider>(
-              builder: (context, themeProvider, child) {
-                return Switch(
-                    inactiveTrackColor: Colors.transparent,
-                    inactiveThumbColor: Colors.orange,
-                    thumbIcon: WidgetStatePropertyAll(
-                      themeProvider.isSelected
-                          ? const Icon(Icons.nights_stay)
-                          : const Icon(Icons.sunny),
-                    ),
-                    value: themeProvider.isSelected,
-                    onChanged: (value) {
-                      themeProvider.toggleTheme();
-                    });
-              },
-            ),
-          )
-        ],
-      ),
+      drawer: NavBar(),
+      appBar: AppBar(),
       body: SafeArea(
         bottom: false,
         child: Consumer<ThemeProvider>(
