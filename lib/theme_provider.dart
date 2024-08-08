@@ -2,16 +2,16 @@ import 'package:calculator_app/theme.dart';
 import 'package:flutter/material.dart';
 
 class ThemeProvider with ChangeNotifier {
-  bool _isSelected = false;
+  bool _isSelected = true;
   bool get isSelected => _isSelected;
-  ThemeData _themeData = lightMode;
+  ThemeData _themeData = darkMode;
   ThemeData get themeData => _themeData;
 
   void toggleTheme() {
-    if (_themeData == lightMode) {
-      _themeData = darkMode;
-    } else {
+    if (_themeData == darkMode) {
       _themeData = lightMode;
+    } else {
+      _themeData = darkMode;
     }
     _isSelected =! _isSelected;
     notifyListeners();

@@ -39,6 +39,8 @@ dependencies:
   function_tree: ^0.9.1
   google_fonts: ^6.2.1
   social_media_buttons: ^1.0.0
+  get:
+  url_launcher: ^6.3.0
 
 dev_dependencies:
   flutter_test:

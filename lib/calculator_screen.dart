@@ -1,9 +1,7 @@
 import 'dart:async';
 import 'package:calculator_app/theme_provider.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'package:calculator_app/navigation_bar.dart';
 
 class CalculatorScreen extends StatefulWidget {
   const CalculatorScreen({super.key});
@@ -33,7 +31,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: NavBar(),
+      // drawer: NavBar(),
       appBar: AppBar(),
       body: SafeArea(
         bottom: false,
@@ -52,11 +50,9 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
                         '$number1$operand$number2'.isEmpty
                             ? '0'
                             : '$number1$operand$number2',
-                        style: GoogleFonts.bebasNeue(
-                          textStyle: const TextStyle(
-                            fontSize: 72,
-                            fontWeight: FontWeight.w500,
-                          ),
+                        style: const TextStyle(
+                          fontSize: 72,
+                          fontWeight: FontWeight.w500,
                         ),
                         textAlign: TextAlign.end,
                       ),
@@ -140,12 +136,10 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
           child: Text(
             btnValue,
             textAlign: TextAlign.center,
-            style: GoogleFonts.bebasNeue(
-              textStyle: TextStyle(
-                  fontWeight: FontWeight.normal,
-                  fontSize: 48,
-                  color: btnValueColor),
-            ),
+            style: TextStyle(
+                fontWeight: FontWeight.w500,
+                fontSize: 36,
+                color: btnValueColor),
           ),
         ),
       ),

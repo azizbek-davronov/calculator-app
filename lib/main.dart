@@ -1,7 +1,9 @@
-import 'package:calculator_app/calculator_screen.dart';
+import 'package:calculator_app/navigation_menu.dart';
 import 'package:calculator_app/theme_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:get/get.dart';
+
 
 void main() {
   runApp(
@@ -17,11 +19,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Calculator',
       theme: Provider.of<ThemeProvider>(context).themeData,
-      home: CalculatorScreen(),
+      home: const NavigationMenu(),
     );
   }
 }
